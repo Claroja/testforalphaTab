@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Using the alpha builds for testing here -->
+    <script src="https://cdn.jsdelivr.net/npm/@coderline/alphatab@alpha/dist/alphaTab.min.js"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #controls {
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            width: 100%;
+            height: 30px;
+            background: #E4E5E6;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        #controls>* {
+            margin-right: 5px;
+        }
+
+        /* Styles for player */
+        .at-cursor-bar {
+            /* Defines the color of the bar background when a bar is played */
+            background: rgba(255, 242, 0, 0.25);
+        }
+
+        .at-selection div {
+            /* Defines the color of the selection background */
+            background: rgba(64, 64, 255, 0.1)
+        }
+
+        .at-cursor-beat {
+            /* Defines the beat cursor */
+            background: rgba(64, 64, 255, 0.75);
+            width: 3px;
+        }
+
+        .at-highlight * {
+            /* Defines the color of the music symbols when they are being played (svg) */
+            fill: #0078ff;
+            stroke: #0078ff;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@coderline/alphatab@latest/dist/alphaTab.min.js"></script>
+    <!-- Include alphaTab -->
+    <script src="alphaTab.js"></script>
+    <!-- Create Element which should contain alphaTab -->
+    <div id="alphaTab" data-tex="true">
+    \title "Hello alphaTab"
+    .
+    :4 0.6 1.6 3.6 0.5 2.5 3.5 0.4 2.4 |
+       3.4 0.3 2.3 0.2 1.2 3.2 0.1 1.1 |
+       3.1.1
+    </div>
+    <!-- Initialize alphaTab -->
+    <script type="text/javascript">
+    const element = document.getElementById('alphaTab');
+    const api = new alphaTab.AlphaTabApi(element);
+    </script>
+</body>
